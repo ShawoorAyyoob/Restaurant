@@ -25,6 +25,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -74,8 +75,8 @@
             <li><a href="#menu">Menu</a></li>
             <li><a href="#specials">Specials</a></li>
             <li><a href="#events">Events</a></li>
-            <li><a href="#chefs">Chefs</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chefs">Chefs</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -582,13 +583,15 @@
               <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
-            </div>
-            <div class="col-lg-4 col-md-6">
               <input type="number" class="form-control" name="people" id="people" placeholder="# of people" required="">
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <input type="text" name="date" class="form-control datepicker" id="date" placeholder="Date" required
+                autocomplete="off">
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <input type="text" class="form-control timepicker" name="time" id="time" placeholder="Time" required
+                autocomplete="off">
             </div>
           </div>
 
@@ -1067,9 +1070,28 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    if (window.flatpickr) {
+      flatpickr('.datepicker', {
+        altInput: true,
+        altFormat: 'F j, Y',
+        dateFormat: 'Y-m-d',
+        minDate: 'today'
+      });
+
+      flatpickr('.timepicker', {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: 'H:i',
+        time_24hr: false
+      });
+    }
+  </script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
